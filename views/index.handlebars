@@ -22,54 +22,35 @@
       </div>
     </div>
 
+<h2>Devoured Burgers!</h2>
+
+
+<ul>
+  {{#each burgers}}
+  {{#if this.devoured}}
+  <li>
+  {{burger_name}}
+  </li>
+  {{/if}}
+  {{/each}}
+
+</ul>
+
+
+
 
 <h2> Add a Burger to Eat </h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="burger"> New Burger </label>
-    <input type="text" id="burger" name="name">
+    <label for="burger_name"> New Burger </label>
+    <input type="text" id="burger_name" name="name">
   </div>
 
 
   <button type="submit">Add Burger </button>
 </form>
 
-<script>
 
- $(".create-form).on("submit", function(event) {
-    
-    event.preventDefault();
 
-    var newBurger = {
-      burger_name: $("#burger").val().trim(),
-    };
- console.log(newBurger)
-   
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        location.reload();
-      }
-    );
-  });
-
-  $(".devour").on("click", function(event) {
-    var id = $(this).data("id");
-
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-      devoured: true;
-    }).then(
-      function() {
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-});
-
-</script>
+ 
