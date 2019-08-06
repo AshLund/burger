@@ -1,15 +1,17 @@
 
 <header>
 <h1> Eat Da Burger! </h1> <img src="../assets/img/burger.png" width="100">
+<hr>
 </header>
 
 
 <div class="row">
     <div class="col-md-6">
 
+       <ul>
+
 <h2> Burgers! </h2>
 
-  <ul>
   {{#each burgers}}
     {{#unless devoured}}
 
@@ -24,10 +26,8 @@
       </ul>
 
     <div class="col-md-6">
+      <ul>
 <h2>Devoured Burgers!</h2>
-
-
-<ul>
   {{#each burgers}}
   {{#if devoured}}
   <li class="form-control">
@@ -41,17 +41,24 @@
 </div>
 </div>
 
-
-
+<div class="row">
+    <div class="col-md-6">
+      <ul>
 <h2> Add a Burger to Eat </h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="burger_name"> New Burger </label>
     <input type="text" id="burger_name" name="burger">
-  <button type="submit">Add Burger </button>
+  <button type="submit" id="add">Add Burger </button>
    </div>
 </form>
+</ul>
+
+
+</div>
+</div>
+
+
 
 
 

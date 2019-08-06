@@ -1,11 +1,24 @@
-body {
-    background-color: goldenrod;
-}
+
 
 h1 {
-    color: darkred;
+    color: red;
     display: inline;
 }
 
+header {
+    text-align: center;
+}
 
+hr {
+    border-color: red;
+    width: 75%;
+}
 
+h2 {
+    color: red;
+}
+
+.devour, #add, #deleteBurger {
+    color: white;
+    background-color: gold;
+}

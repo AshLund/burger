@@ -40,7 +40,7 @@ $(".create-form").on("submit", function(event) {
       });
   });
 
-$(".deleteBurger").on("click", function (event) {
+$("#deleteBurger").on("click", function (event) {
   event.preventDefault();
 
   var id=$(this).data("id");
