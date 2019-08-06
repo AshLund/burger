@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
     var arr = [];
@@ -34,8 +34,8 @@ function printQuestionMarks(num) {
   }
 
 var orm={
-        selectAll: function(tableInput, cb) {
-          var queryString = "SELECT * FROM " + tableInput + ";";
+        selectAll: function(table, cb) {
+          var queryString = "SELECT * FROM " + table + ";";
           connection.query(queryString, function(err, result) {
             if (err) {
               throw err;
@@ -53,9 +53,10 @@ var orm={
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        connection.query(queryString, value, function (err, result) {
+        connection.query(queryString, vals, function (err, result) {
             if (err) {
-                throw err}
+                throw err
+              }
             cb(result)
         });
 
@@ -67,15 +68,29 @@ var orm={
         queryString += " WHERE "
         queryString += condition
         console.log(queryString)
+       
         connection.query(queryString, function(err, result) {
           if (err) {
             throw err
           }
           cb(result)
-        })
-      }
-    }
+        });
+      },
     
+    
+      deleteOne: function(table, conditon, cb) {
+        var queryString="DELTE FROM" + table;
+        queryString += "WHERE";
+        queryString+= condition;
+
+      connection.query(queryString, function (err, result) {
+        if (err) {
+          throw err
+        }
+        cb(result)
+      });
+      }
+}
 
 
 
