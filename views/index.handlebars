@@ -12,7 +12,7 @@
 
 <h2> Burgers! </h2>
 
-  {{#each burgers}}
+  {{#each burger_data}}
     {{#unless devoured}}
 
   <li class="form-control">{{id}} - {{this.burger_name}}</li>
@@ -28,7 +28,7 @@
     <div class="col-md-6">
       <ul>
 <h2>Devoured Burgers!</h2>
-  {{#each burgers}}
+  {{#each burgers_data}}
   {{#if devoured}}
   <li class="form-control">
   {{this.id}} - {{this.burger_name}}
@@ -49,7 +49,7 @@
 
   <div class="form-group">
     <input type="text" id="burger_name" name="burger">
-  <button type="submit" id="add">Add Burger </button>
+  <button type="submit" id="add" class="create-form">Add Burger </button>
    </div>
 </form>
 </ul>
