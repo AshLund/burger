@@ -12,7 +12,7 @@
 
 <h2> Burgers! </h2>
 
-  {{#each burger_data}}
+  {{#each burgers}}
     {{#unless devoured}}
 
   <li class="form-control">{{id}} - {{this.burger_name}}</li>
@@ -28,7 +28,7 @@
     <div class="col-md-6">
       <ul>
 <h2>Devoured Burgers!</h2>
-  {{#each burgers_data}}
+  {{#each burgers}}
   {{#if devoured}}
   <li class="form-control">
   {{this.id}} - {{this.burger_name}}

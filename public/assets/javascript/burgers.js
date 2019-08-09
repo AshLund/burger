@@ -1,14 +1,14 @@
 $(document).ready(function() {
 
-$(document).on("submit", function(event) {
+$(document).on("add", function(event) {
 
     
     event.preventDefault();
 
-    var burger_id = $(this).children(".burger_id").val();
+    var id = $(this).children("id").val();
   
     $.ajax ( {method: "PUT",
-      url: "/burgers/" + burger_id
+      url: "/burgers/" + id
     }).then(
       function(data) {
     
