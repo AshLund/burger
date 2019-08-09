@@ -14,16 +14,15 @@ router.get("/burgers", function(req, res) {
   })
 })
 
-router.post("/burgers/create", function (req, res) {
-  burger.insertOne(req.body.burger_name, function(result) {
+router.post("/burgers/create/:name", function (req, res) {
+  burger.insertOne(req.params.name, function(result) {
     res.redirect("/");
-    console.log("create")
   });
 });
 
   router.put("/burgers/:id", function (req, res) {
   burger.updateOne(req.params.id, function (result) {
-      res.status(200);
+      res.sendStatus(200);
       console.log("hello Nick")
   });
 });
